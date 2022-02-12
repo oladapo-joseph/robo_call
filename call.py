@@ -43,10 +43,7 @@ class Robotcall:
                 to=str(number),
                 from_=self.phone,
                 url = self.file) 
-            # response = VoiceResponse()
-            # response.say('Hi, how are you, My name is Dapo')
-           
-            # response.play(self.file)   
+            
             print(to_call.sid)
         except ConnectionError as e:
             print('Unable to connect to Internet ')
@@ -60,7 +57,7 @@ class Robotcall:
             self.ssid = file.readline()
             self.TOKEN, self.phone = [str(line) for line in file]
                 
-FILE = 'http://demo.twilio.com/docs/voice.xml'
+FILE = ''
 TOKENS = 'tokens.txt'
 PHONE = '+2347019080897'
 
@@ -68,6 +65,7 @@ if __name__ =='__main__':
     robot = Robotcall(FILE)
     robot.get_token(TOKENS)
     robot.call(PHONE)
+    print(robot)
 
 
 
