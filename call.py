@@ -37,7 +37,7 @@ class Robotcall:
 
 
     def call(self, number):
-        client = Client(self.ssid,self.TOKEN)
+        client = Client(self.SSID,self.TOKEN)
         try:
             to_call = client.calls.create(
                 to=str(number),
@@ -54,10 +54,10 @@ class Robotcall:
     def get_token(self, name_of_file):
         tokens = []
         with open(name_of_file, 'r') as file:
-            self.ssid = file.readline()
+            self.SSID = file.readline()
             self.TOKEN, self.phone = [str(line) for line in file]
                 
-FILE = ''
+FILE = 'https://github.com/oladapo-joseph/robo_call/blob/main/voice.xml'
 TOKENS = 'tokens.txt'
 PHONE = '+2347019080897'
 
